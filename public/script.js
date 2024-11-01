@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const loadingBar = document.getElementById("loadingBar");
 
   // Function to fetch image from the selected API
+  // Function to fetch image from the selected API
   async function fetchImage() {
     const apiUrl = apiSelector.value;
     try {
@@ -16,6 +17,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       // Fetch from the selected API
       const response = await fetch(apiUrl);
       const data = await response.json();
+      console.log(data);
+      // Determine which key to use for the image URL
 
       // Update image source with fetched URL
       embeddedImage.src = data.url;
