@@ -1,35 +1,26 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  // Get elements
+document.addEventListener("DOMContentLoaded", async () => {
   const actionButton = document.getElementById("actionButton");
   const embeddedImage = document.getElementById("embeddedImage");
   const apiSelector = document.getElementById("apiSelector");
   const loadingBar = document.getElementById("loadingBar");
 
-  // Function to fetch image from the selected API
-  // Function to fetch image from the selected API
   async function fetchImage() {
     const apiUrl = apiSelector.value;
     try {
-      // Show loading bar
       loadingBar.style.width = "50%";
       embeddedImage.style.opacity = "0"; // Hide image until loaded
 
-      // Fetch from the selected API
       const response = await fetch(apiUrl);
       const data = await response.json();
-      console.log(data);
-      // Determine which key to use for the image URL
-
-      // Update image source with fetched URL
       embeddedImage.src = data.url;
-      loadingBar.style.width = "75%"; // Update loading bar while image is loading
 
-      // Add a load event listener to the image to hide loading bar
-      embeddedImage.onload = function () {
+      loadingBar.style.width = "75%"; // Update loading bar
+
+      embeddedImage.onload = () => {
         loadingBar.style.width = "100%";
         setTimeout(() => {
-          loadingBar.style.width = "0"; // Hide loading bar after a brief delay
-          embeddedImage.style.opacity = "1"; // Show the image
+          loadingBar.style.width = "0"; // Hide loading bar
+          embeddedImage.style.opacity = "1"; // Show image
         }, 500);
       };
     } catch (error) {
@@ -38,9 +29,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   }
 
-  // Fetch initial image on page load
   await fetchImage();
-
-  // Add event listener for button click to fetch new image
   actionButton.addEventListener("click", fetchImage);
 });
