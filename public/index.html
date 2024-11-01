@@ -4,42 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Embed</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        display: block;
-        padding: 20px;
-        background-color: #f0f0f0;
-      }
-      .button-container {
-        margin-bottom: 20px;
-      }
-      .embed-container {
-        width: 100%;
-        height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 5;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background-color: #fff;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        border-radius: 8px;
-      }
-    </style>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Endpoint Selector -->
     <div class="button-container">
       <label for="apiSelector">Select API Endpoint:</label>
       <select id="apiSelector">
@@ -51,10 +19,16 @@
       <button id="actionButton">Fetch Image</button>
     </div>
 
-    <!-- Fixed Image Container -->
     <div class="embed-container" id="embedContainer">
-      <img alt="Sample Image" id="embeddedImage" />
+      <!-- Loading bar -->
+      <div class="loading-bar" id="loadingBar"></div>
+      <img
+        src="https://i.waifu.pics/f1qIjfr.com_0085.png"
+        alt="Sample Image"
+        id="embeddedImage"
+      />
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

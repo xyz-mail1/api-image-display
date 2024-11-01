@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.button-container {
+  margin-bottom: 20px;
+}
+
+.embed-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Loading bar styles */
+.loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background-color: #007bff;
+  transition: width 0.4s ease;
+}
