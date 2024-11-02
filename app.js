@@ -5,6 +5,8 @@ const fetch = require("node-fetch");
 const app = express();
 const PORT = 3000;
 
+const url = "https://freaky-shiv-website.onrender.com/";
+
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -34,3 +36,22 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+function keepAlive() {
+  fetch(url)
+    .then((response) => {
+      console.log(
+        `Reloaded at ${new Date().toISOString()}: Status Code ${
+          response.status
+        }`
+      );
+    })
+    .catch((error) => {
+      console.error(
+        `Error reloading at ${new Date().toISOString()}:`,
+        error.message
+      );
+    });
+}
+
+setInterval(keepAlive, 30000);
