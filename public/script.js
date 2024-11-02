@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=17",
         text: "Pussy",
       },
+      {
+        value:
+          "https://api.nekosapi.com/v3/images/random?limit=1&tag=8&rating=explicit",
+        text: "Catgirl",
+      },
     ],
   };
 
@@ -106,6 +111,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   function toggleFetchButton() {
     const selectedEndpoint = endpoint.value;
     actionButton.style.display = selectedEndpoint ? "inline-block" : "none";
+
+    // Save selections to localStorage
+    localStorage.setItem("selectedApi", apiSelector.value);
+    localStorage.setItem("selectedEndpoint", selectedEndpoint);
   }
 
   async function fetchImage() {
@@ -145,6 +154,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
+  // Load saved selections and fetch image on page load
+  const savedApi = localStorage.getItem("selectedApi");
+  const savedEndpoint = localStorage.getItem("selectedEndpoint");
+
+  if (savedApi && savedEndpoint) {
+    apiSelector.value = savedApi;
+    showEndpoints(); // Populate endpoint dropdown
+
+    // Delay setting the endpoint and showing the button until after options are populated
+    setTimeout(() => {
+      endpoint.value = savedEndpoint;
+      toggleFetchButton(); // Show fetch button if endpoint is set
+      fetchImage(); // Fetch a new image on page load
+    }, 100); // Short delay to ensure options are populated
+  }
   // Event listeners
   apiSelector.addEventListener("change", showEndpoints);
   endpoint.addEventListener("change", toggleFetchButton);
