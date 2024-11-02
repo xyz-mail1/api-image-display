@@ -2,10 +2,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const actionButton = document.getElementById("actionButton");
   const embeddedImage = document.getElementById("embeddedImage");
   const apiSelector = document.getElementById("apiSelector");
-  const endpoint = document.getElementById("endpoints"); // Second dropdown for endpoints
+  const endpoint = document.getElementById("endpoints");
   const loadingBar = document.getElementById("loadingBar");
 
-  // Define the options for each API
   const options = {
     waifu_pics: [
       {
@@ -72,6 +71,47 @@ document.addEventListener("DOMContentLoaded", async () => {
         value:
           "https://api.nekosapi.com/v3/images/random?limit=1&tag=8&rating=explicit",
         text: "Catgirl",
+      },
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=15",
+        text: "Boobs",
+      },
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=16",
+        text: "Ass",
+      },
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=18",
+        text: "Dick",
+      },
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=19",
+        text: "Maid",
+      },
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=31",
+        text: "Bikini",
+      },
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=34",
+        text: "Bunny girl",
+      },
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=44",
+        text: "Anal",
+      },
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=46",
+        text: "Masturbating",
+      },
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=47",
+        text: "Threesome",
+      },
+      {
+        value:
+          "https://api.nekosapi.com/v3/images/random?limit=1&tag=48&rating=explicit",
+        text: "Kissing",
       },
     ],
   };
