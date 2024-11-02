@@ -63,6 +63,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         text: "Ecchi",
       },
     ],
+    nekos_api: [
+      {
+        value: "https://api.nekosapi.com/v3/images/random?limit=1&tag=17",
+        text: "Pussy",
+      },
+    ],
   };
 
   function showEndpoints() {
@@ -114,8 +120,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       const response = await fetch(apiUrl);
       const data = await response.json();
-      embeddedImage.src = data.url || data.images[0].url;
+      const imageUrl =
+        data.url ||
+        (data.images && data.images[0].url) ||
+        (data.items && data.items[0].image_url);
 
+      if (imageUrl) {
+        embeddedImage.src = imageUrl;
+      } else {
+        console.error("Error: No valid image URL found in the response data.");
+      }
       loadingBar.style.width = "75%"; // Update loading bar
 
       embeddedImage.onload = () => {
