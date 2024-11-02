@@ -9,41 +9,58 @@ document.addEventListener("DOMContentLoaded", async () => {
   const options = {
     waifu_pics: [
       {
-        id: "sfw-waifu",
         value: "https://api.waifu.pics/sfw/waifu",
         text: "Sfw Waifu",
       },
       {
-        id: "sfw-neko",
         value: "https://api.waifu.pics/sfw/neko",
         text: "Sfw Neko",
       },
       {
-        id: "nsfw-waifu",
         value: "https://api.waifu.pics/nsfw/waifu",
         text: "Nsfw Waifu",
       },
       {
-        id: "nsfw-neko",
         value: "https://api.waifu.pics/nsfw/neko",
         text: "Nsfw Neko",
       },
       {
-        id: "nsfw-trap",
         value: "https://api.waifu.pics/nsfw/trap",
         text: "Nsfw Trap",
       },
       {
-        id: "nsfw-blowjob",
         value: "https://api.waifu.pics/nsfw/blowjob",
         text: "Nsfw Blowjob",
       },
     ],
     waifu_im: [
       {
-        id: "ass",
         value: "https://api.waifu.im/search?included_tags=ass",
         text: "Ass",
+      },
+      {
+        value: "https://api.waifu.im/search?included_tags=ero",
+        text: "Ero",
+      },
+      {
+        value: "https://api.waifu.im/search?included_tags=hentai",
+        text: "Hentai",
+      },
+      {
+        value: "https://api.waifu.im/search?included_tags=milf",
+        text: "Milf",
+      },
+      {
+        value: "https://api.waifu.im/search?included_tags=oral",
+        text: "Oral",
+      },
+      {
+        value: "https://api.waifu.im/search?included_tags=paizuri",
+        text: "Paizuri",
+      },
+      {
+        value: "https://api.waifu.im/search?included_tags=ecchi",
+        text: "Ecchi",
       },
     ],
   };
