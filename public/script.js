@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       const response = await fetch(apiUrl);
       const data = await response.json();
-      embeddedImage.src = data.url;
+      embeddedImage.src = data.url || data.images[0].url;
 
       loadingBar.style.width = "75%"; // Update loading bar
 
