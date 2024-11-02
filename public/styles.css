@@ -11,7 +11,14 @@ body {
 }
 
 .button-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 20px;
+}
+
+#endpointOptions {
+  display: none; /* Initially hidden until an API is selected */
 }
 
 .embed-container {

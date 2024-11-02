@@ -8,23 +8,22 @@
   </head>
   <body>
     <div class="button-container">
-      <label for="apiSelector">Select API Endpoint:</label>
-      <select id="apiSelector">
-        <option value="https://api.waifu.pics/sfw/waifu">SFW Waifu</option>
-        <option value="https://api.waifu.pics/sfw/neko">SFW Neko</option>
-        <option value="https://api.waifu.pics/nsfw/waifu">NSFW Waifu</option>
-        <option value="https://api.waifu.pics/nsfw/neko">NSFW Neko</option>
-        <option value="https://api.waifu.pics/nsfw/trap">NSFW Trap</option>
-        <option value="https://api.waifu.pics/nsfw/blowjob">
-          NSFW Blowjob
-        </option>
-        <option value="https://api.waifu.im/search?included_tags=ass">
-          Ass
-        </option>
+      <label for="apiSelector">Select an API:</label>
+      <select id="apiSelector" onchange="showEndpoints()">
+        <option value="">Select an API</option>
+        <option value="waifu_pics">Waifu.pics</option>
+        <option value="waifu_im">Waifu.im</option>
       </select>
-      <button id="actionButton">Fetch Image</button>
-    </div>
 
+      <div id="endpointOptions">
+        <label for="endpoints">Options:</label>
+        <select id="endpoints" onchange="toggleFetchButton()">
+          <option value="">Select an endpoint</option>
+        </select>
+      </div>
+
+      <button id="actionButton" style="display: none">Fetch Image</button>
+    </div>
     <div class="embed-container" id="embedContainer">
       <div id="loadingBar" class="loading-bar"></div>
       <img id="embeddedImage" src="" alt="Sample Image" />
