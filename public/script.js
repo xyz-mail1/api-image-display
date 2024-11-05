@@ -170,9 +170,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const response = await fetch(apiUrl);
       const data = await response.json();
       const imageUrl =
-        data.url ||
-        (data.images && data.images[0].url) ||
-        (data.items && data.items[0].image_url);
+        data.url ?? data.images?.[0]?.url ?? data.items?.[0]?.image_url;
 
       if (imageUrl) {
         embeddedImage.src = imageUrl;

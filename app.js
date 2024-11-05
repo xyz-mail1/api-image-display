@@ -6,6 +6,7 @@ const app = express();
 const PORT = 3000;
 
 const url = "https://freaky-shiv-website.onrender.com/";
+app.set("trust proxy", true);
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, "public")));
@@ -29,6 +30,7 @@ app.get("/api/image", async (req, res) => {
 
 // Serve the index.html file
 app.get("/", (req, res) => {
+  console.log(req.ip);
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
